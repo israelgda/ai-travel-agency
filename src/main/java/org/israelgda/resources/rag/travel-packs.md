@@ -2,6 +2,7 @@
 * Duration: 7 days / 6 nights
 * Activities: Jungle trekking, wildlife spotting, river cruises, cultural experiences with local tribes
 * Policies: All-inclusive package with accommodation, meals, and guided tours. Travel insurance is recommended.
+* Cancellation Policy: Full refund if canceled 30 days before departure, 50% refund if canceled 15 days before departure, no refund if canceled within 14 days of departure.
 * Price: $2,500 per person
 
 
@@ -9,4 +10,5 @@
 * Duration: 10 days / 9 nights
 * Activities: Visits to historical landmarks, museums, art galleries, and cultural performances across multiple European
 * Policies: Includes accommodation, breakfast, and guided tours. Airfare not included. Travel insurance is recommended.
+* Cancellation Policy: Full refund if canceled 45 days before departure, 50% refund if canceled 30 days before departure, no refund if canceled within 29 days of departure.
 * Price: $3,800 per person
