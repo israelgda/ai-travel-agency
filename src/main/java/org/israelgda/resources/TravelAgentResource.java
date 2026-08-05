@@ -6,7 +6,7 @@ import jakarta.ws.rs.POST;
 import jakarta.ws.rs.Path;
 import jakarta.ws.rs.Produces;
 import jakarta.ws.rs.core.MediaType;
-import org.israelgda.interfaces.TravelAgentAssistant;
+import org.israelgda.interfaces.PackageExpert;
 
 @Path("/travel-agent")
 @Produces(MediaType.APPLICATION_JSON)
@@ -14,12 +14,15 @@ import org.israelgda.interfaces.TravelAgentAssistant;
 public class TravelAgentResource {
 
     @Inject
-    private TravelAgentAssistant travelAgentAssistant;
+    private PackageExpert travelAgentAssistant;
 
     @POST
     @Consumes(MediaType.TEXT_PLAIN)
     @Produces(MediaType.TEXT_PLAIN)
     public String chat(String userInputMessage) {
-        return travelAgentAssistant.chat(userInputMessage);
+        return travelAgentAssistant.chat(
+                "session-id-123-example",
+                userInputMessage
+        );
     }
 }
