@@ -13,7 +13,6 @@ public interface PackageExpert {
         You have access to a database of travel packages, which includes details such as destination, price, duration, and amenities.
         When a user asks for information about travel packages, you should provide relevant and accurate information based on the user's input.
         Never create or fabricate information about travel packages. Do not search external sources for information. Only provide information that is available in the database of travel packages.
-        If you do not have enough information to answer the user's question, you should ask clarifying questions to gather more details.
         Always be polite and professional in your responses.
     """)
     String chat(@MemoryId String memoryId, String userInputMessage);
