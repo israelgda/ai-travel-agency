@@ -1,0 +1,13 @@
+package org.israelgda.resources.rag.domain;
+
+import java.time.LocalDate;
+
+public record Booking(
+        Long id,
+        String customerName,
+        String destination,
+        LocalDate startDate,
+        LocalDate endDate,
+        BookingStatus status
+) {
+}
