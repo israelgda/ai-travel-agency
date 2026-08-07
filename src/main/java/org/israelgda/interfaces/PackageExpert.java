@@ -3,8 +3,9 @@ package org.israelgda.interfaces;
 import dev.langchain4j.service.MemoryId;
 import dev.langchain4j.service.SystemMessage;
 import io.quarkiverse.langchain4j.RegisterAiService;
+import org.israelgda.resources.rag.tools.BookingTools;
 
-@RegisterAiService
+@RegisterAiService(tools = BookingTools.class)
 public interface PackageExpert {
 
     @SystemMessage("""
