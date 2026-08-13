@@ -2,10 +2,11 @@ package org.israelgda.interfaces;
 
 import dev.langchain4j.service.MemoryId;
 import dev.langchain4j.service.SystemMessage;
+import dev.langchain4j.service.UserMessage;
 import io.quarkiverse.langchain4j.RegisterAiService;
-import org.israelgda.resources.rag.tools.BookingTools;
+import io.quarkiverse.langchain4j.mcp.runtime.McpToolBox;
 
-@RegisterAiService(tools = BookingTools.class)
+@RegisterAiService
 public interface PackageExpert {
 
     @SystemMessage("""
@@ -18,5 +19,6 @@ public interface PackageExpert {
         the user that you do not have that information and suggest they contact a travel agent for further assistance.
         Always be polite and professional in your responses.
     """)
-    String chat(@MemoryId String memoryId, String userInputMessage);
+    @McpToolBox("booking-server")
+    String chat(@MemoryId String memoryId, @UserMessage String userInputMessage);
 }
