@@ -3,10 +3,13 @@ package org.israelgda.interfaces;
 import dev.langchain4j.service.MemoryId;
 import dev.langchain4j.service.SystemMessage;
 import dev.langchain4j.service.UserMessage;
+import io.quarkiverse.langchain4j.RegisterAiService;
 import io.quarkiverse.langchain4j.mcp.runtime.McpToolBox;
+import io.quarkus.arc.DefaultBean;
 
-@Deprecated
-public interface PackageExpert {
+@RegisterAiService
+@DefaultBean
+public interface PackageExpertWithPromtpTemplate {
 
     @SystemMessage("""
         You are a travel agent assistant that specializes in providing information about travel packages. 
@@ -19,5 +22,7 @@ public interface PackageExpert {
         Always be polite and professional in your responses.
     """)
     @McpToolBox("booking-server")
-    String chat(@MemoryId String memoryId, @UserMessage String userInputMessage);
+    //Defining prompt template
+    @UserMessage("Do what user is asking {message}. The user used for authentication is {username}.")
+    String chat(@MemoryId String memoryId, String message, String username);
 }
