@@ -3,9 +3,11 @@ package org.israelgda.interfaces;
 import dev.langchain4j.service.MemoryId;
 import dev.langchain4j.service.SystemMessage;
 import dev.langchain4j.service.UserMessage;
+import dev.langchain4j.service.guardrail.InputGuardrails;
 import io.quarkiverse.langchain4j.RegisterAiService;
 import io.quarkiverse.langchain4j.mcp.runtime.McpToolBox;
 import io.quarkus.arc.DefaultBean;
+import org.israelgda.interfaces.security.InjectionGuard;
 
 @RegisterAiService
 @DefaultBean
@@ -21,6 +23,8 @@ public interface PackageExpertWithPromtpTemplate {
         the user that you do not have that information and suggest they contact a travel agent for further assistance.
         Always be polite and professional in your responses.
     """)
+    //Defining Guardrail Bean configured
+    @InputGuardrails({InjectionGuard.class})
     @McpToolBox("booking-server")
     //Defining prompt template
     @UserMessage("Do what user is asking {message}. The user used for authentication is {username}.")
